@@ -10,6 +10,8 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.15.6",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.7.1",
     "pdfjs-dist": "2.4.456",
     "vue": "^2.6.11"
   },

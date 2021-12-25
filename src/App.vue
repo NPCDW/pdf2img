@@ -65,7 +65,7 @@ export default {
       exportImgButtonLoading: false,
       startPage: 1,
       endPage: 1,
-      file: [],
+      fileName: null,
     };
   },
   methods: {
@@ -76,7 +76,7 @@ export default {
           new Promise((resolve) => {
             this.canvasToImg(this.currentPage, this.scale, this.rotate, resolve)
           }).then((imgData) => {
-            saveAs(imgData, this.currentPage + ".png");
+            saveAs(imgData, this.fileName + '.' + this.currentPage + ".png");
             this.exportImgButtonLoading = false
           })
         } else {
@@ -86,7 +86,7 @@ export default {
           }
           let allPromise = []
           let zip = new JSZip();
-          let img = zip.folder("images");
+          let img = zip.folder(this.fileName);
           for (let i = this.startPage; i <= this.endPage; i++) {
             let promise = new Promise((resolve) => {
               this.canvasToImg(i, this.scale, this.rotate, resolve)
@@ -96,7 +96,7 @@ export default {
             allPromise.push(promise)
           }
           Promise.all(allPromise).then(() => {
-            zip.generateAsync({type:"blob"}).then(content => saveAs(content, "example.zip"));
+            zip.generateAsync({type:"blob"}).then(content => saveAs(content, this.fileName + ".zip"));
             this.exportImgButtonLoading = false
           })
         }
@@ -163,12 +163,14 @@ export default {
       })
     },
     handlePdfUpload(event) {
-      if (!event.target.files[0]) {
+      let file = event.target.files[0];
+      if (!file) {
         return
       }
+      this.fileName = file.name.substr(0, file.name.length - 4)
       let self = this
       let reader = new FileReader();
-      reader.readAsArrayBuffer(event.target.files[0])
+      reader.readAsArrayBuffer(file)
       reader.onload = function(){
         self._loadFile(this.result)
       }

@@ -1,24 +1,10 @@
-# pdf2img
+# pdf2img PDF转图片
 
-## Project setup
-```
-npm install
-```
+试一下：[https://npcdw.github.io/pdf2img/](https://npcdw.github.io/pdf2img/)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+引用库：
+pdfjs：PDF转为Canvas
+jszip：将Canvas转的Blob数据，打包进一个zip文件中
+file-saver：下载文件
+element-ui
+vue

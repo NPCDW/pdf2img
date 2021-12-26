@@ -156,7 +156,8 @@ export default {
       })
     },
     _loadFile(data) {
-      const CMAP_URL = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/cmaps/';
+      // https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/cmaps/
+      const CMAP_URL = 'https://unpkg.zhimg.com/pdfjs-dist@2.4.456/cmaps/';
       PDFJS.getDocument({data: data, cMapUrl: CMAP_URL, cMapPacked: true}).promise.then((pdf) => {
         this.pdfDoc = pdf
         this.total = pdf.numPages

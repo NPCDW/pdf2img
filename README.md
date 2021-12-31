@@ -15,6 +15,8 @@
 
 打开网页后，您可以断网（拔网线或开飞行模式）进行操作
 
+![image](https://user-images.githubusercontent.com/32638459/147827418-87467a31-44ce-46c3-9316-856ab60c1598.png)
+
 |  引用库   | 目的  |
 |  ----  | ----  |
 | [pdfjs](https://github.com/mozilla/pdf.js/releases/tag/v2.11.338)  | PDF转为Canvas |

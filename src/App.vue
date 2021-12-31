@@ -35,7 +35,7 @@
       <div style="margin-bottom: 40px">
         <p style="text-align: center; color: red;">没有保存，就没有泄露</p>
         <p style="text-align: center; color: red;">本站声明，绝不会保存您的任何资源</p>
-        <p style="text-align: center; color: red;">如果不放心，您可以断网（拔网线或开飞行模式）进行操作</p>
+        <p style="text-align: center; color: red;">您现在可以断网（拔网线或开飞行模式）进行操作</p>
       </div>
     </div>
     <div class="canvas" :style="{height: height + 'px', width: width + 'px'}">

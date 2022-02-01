@@ -33,7 +33,14 @@
         </div>
       </div>
     </div>
-    <div class="canvas" :style="{height: height + 'px', width: width + 'px'}">
+    <div v-if="!pdfDoc" style="border: #DDDDDD 3px dashed;width: 512px;height: 256px;position: relative">
+      <div style="position: absolute;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center">
+        <span style="font-size: 40px;text-align: center;color: #AAAAAA;width: 100%;">+</span>
+        <span style="font-size: 15px;text-align: center;color: #AAAAAA;width: 100%;">点击上传，或拖拽到此处上传</span>
+      </div>
+      <input type="file" accept="application/pdf" @change="handlePdfUpload($event)" style="position: absolute;width: 100%;height: 100%;top:0;left: 0;opacity: 0"/>
+    </div>
+    <div v-else class="canvas" :style="{height: height + 'px', width: width + 'px'}">
       <canvas ref="the-canvas" :height="height" :width="width">
       </canvas>
       <input type="file" accept="application/pdf" @change="handlePdfUpload($event)" style="position: absolute;width: 100%;height: 100%;top:0;left: 0;opacity: 0"/>

@@ -1,14 +1,18 @@
+const cdnPrefix = "//cdn.jsdelivr.net/npm/"
+// const cdnPrefix = "//unpkg.zhimg.com/"
+// const cdnPrefix = "//unpkg.com/"
+
 const cdn = {
     css: [
-        "//unpkg.zhimg.com/element-ui@2.15.6/lib/theme-chalk/index.css",
+        cdnPrefix + "element-ui@2.15.6/lib/theme-chalk/index.css",
     ],
     js: [
-        "//unpkg.zhimg.com/vue@2.6.11/dist/vue.min.js",
-        "//unpkg.zhimg.com/element-ui@2.15.6/lib/index.js",
-        "//unpkg.zhimg.com/pdfjs-dist@2.4.456/build/pdf.min.js",
-        "//unpkg.zhimg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js",
-        "//unpkg.zhimg.com/jszip@3.7.1/dist/jszip.min.js",
-        "//unpkg.zhimg.com/file-saver@2.0.5/dist/FileSaver.min.js",
+        cdnPrefix + "vue@2.6.11/dist/vue.min.js",
+        cdnPrefix + "element-ui@2.15.6/lib/index.js",
+        cdnPrefix + "pdfjs-dist@2.4.456/build/pdf.min.js",
+        cdnPrefix + "pdfjs-dist@2.4.456/build/pdf.worker.min.js",
+        cdnPrefix + "jszip@3.7.1/dist/jszip.min.js",
+        cdnPrefix + "file-saver@2.0.5/dist/FileSaver.min.js",
     ]
 }
 
